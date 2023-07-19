@@ -1,6 +1,7 @@
 import os
 from pyrogram import Client, filters
 import shutil
+from os import system as cmd
 bot = Client(
     "myfirs",
     api_id=17983098,
