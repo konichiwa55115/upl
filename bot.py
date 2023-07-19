@@ -14,9 +14,12 @@ def command1(bot,message):
 def _telegram_file(client, message):
   
   user_id = message.from_user.id 
-  sent_message = message.reply_text('جار االرفع\n\n قال رسول الله ﷺ  لَيَكونَنَّ مِن أُمَّتي أقْوامٌ يَسْتَحِلُّونَ الحِرَ والحَرِيرَ، والخَمْرَ والمَعازِفَ، ولَيَنْزِلَنَّ أقْوامٌ إلى جَنْبِ عَلَمٍ، يَرُوحُ عليهم بسارِحَةٍ لهمْ، يَأْتِيهِمْ -يَعْنِي الفقِيرَ- لِحاجَةٍ، فيَقولونَ: ارْجِعْ إلَيْنا غَدًا، فيُبَيِّتُهُمُ اللَّهُ، ويَضَعُ العَلَمَ، ويَمْسَخُ آخَرِينَ قِرَدَةً وخَنازِيرَ إلى يَومِ القِيامَةِ. ( صحيح البخاري)', quote=True)
-  file = message.audio
+  sent_message = message.reply_text('جار االرفع\n\n', quote=True)
+  file = message
   file_path = message.download(file_name="./downloads/")
 
 
+@bot.on_message(filters.command('upld') & filters.private)
+def command2(bot,message):
+  cmd("rclone copy ./downloads/ 'karim':'upload747855xutyi' --progress ")
 bot.run()
