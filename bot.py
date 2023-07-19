@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+import shutil
 bot = Client(
     "myfirs",
     api_id=17983098,
@@ -22,4 +23,5 @@ def _telegram_file(client, message):
 @bot.on_message(filters.command('upld') & filters.private)
 def command2(bot,message):
   cmd("rclone copy ./downloads/ 'karim':'upload747855xutyi' --progress ")
+  shutil.rmtree('./downloads/')
 bot.run()
