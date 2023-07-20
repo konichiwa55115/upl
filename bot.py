@@ -23,6 +23,6 @@ def _telegram_file(client, message):
 
 @bot.on_message(filters.command('upld') & filters.private)
 def command2(bot,message):
-  cmd("rclone copy ./downloads/ 'karim':'tasmeem155151sx' --progress ")
+  cmd("rclone copy ./downloads/ 'karim':'gumbullfilegfjgx' --progress ")
   shutil.rmtree('./downloads/')
 bot.run()
